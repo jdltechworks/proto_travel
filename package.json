@@ -38,5 +38,8 @@
     "redux-module-builder": "^0.3.2",
     "redux-thunk": "^2.2.0",
     "url-loader": "^0.6.2"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
   }
 }

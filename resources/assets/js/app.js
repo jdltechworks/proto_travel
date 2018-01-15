@@ -1,22 +1,10 @@
+import { render } from 'react-dom'
+import React, { Component } from 'react'
+import ClientProvider from './provider/Client'
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+const app = (props, target) => {
+  //get initial props / redux state
+  render(<ClientProvider {...props} />, document.getElementById(target))
+}
 
-require('./bootstrap');
-
-window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
-});
+window.app = app

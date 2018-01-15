@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Authentication Routes...
+$this->get('accounts/login', 'Auth\LoginController@showLoginForm')->name('login');
+$this->post('accounts/login', 'Auth\LoginController@login');
+$this->post('accounts/logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+$this->get(
+  'accounts/register',
+  'Auth\RegisterController@showRegistrationForm'
+)->name('register');
+$this->post('accounts/register', 'Auth\RegisterController@register');
+
+Route::get('/{path?}', 'HomeController@index');
